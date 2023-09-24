@@ -3,9 +3,9 @@ const { UserModel } = require("../model/UserModel")
 const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 
-const userRouter=express.Router()
+const UserRouter=express.Router()
 
-userRouter.post("/signup",async (req,res)=>{
+UserRouter.post("/signup",async (req,res)=>{
     
     const {username,email,password}=req.body
     try {
@@ -54,7 +54,7 @@ userRouter.post("/signup",async (req,res)=>{
 
 
 
-userRouter.post("/login",async(req,res)=>{
+UserRouter.post("/login",async(req,res)=>{
         const {email,password}=req.body
 
         try {
@@ -91,5 +91,5 @@ userRouter.post("/login",async(req,res)=>{
 
 
 module.exports={
-    userRouter
+    UserRouter
 }
